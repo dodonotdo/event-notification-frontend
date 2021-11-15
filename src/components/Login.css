@@ -1,10 +1,35 @@
-@media all and (min-width: 480px) {
-    .Login {
-      padding: 60px 0;
-    }
-  
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }
+.Login {
+  margin: 0;
+  padding: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Login form {
+  margin: 150px 500px;
+  border: 2px solid lightgray;
+  border-radius: 8px;
+}
+.form-group {
+  padding: 20px;
+  padding-bottom: 30px;
+  background-color: blue;
+}
+.form-label {
+  margin-right: 250px;
+  margin-bottom: 20px;
+  /* color: red; */
+}
+.form-control {
+  padding: 8px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 300px;
+  border-radius: 5px;
+}
+.btn {
+  width: 330px;
+  padding: 12px;
+  background-color: #007bff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}

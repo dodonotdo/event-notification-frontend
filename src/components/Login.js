@@ -4,11 +4,12 @@ import Button from "react-bootstrap/Button";
 import "./Login.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    return email.length > 0 && password.length > 0 && username.length > 0;
   }
 
   function handleSubmit(event) {
@@ -18,24 +19,37 @@ export default function Login() {
   return (
     <div className="Login">
       <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
+        <h1>Login Form</h1>
+
+        <Form.Group>
+          <Form.Label>Username</Form.Label>
+          <br />
           <Form.Control
             autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </Form.Group>
         <Form.Group size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
+          <br />
           <Form.Control
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Email_id</Form.Label>
+          <br />
+          <Form.Control
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Button className="btn" type="submit" onSubmit={validateForm()}>
           Login
         </Button>
       </Form>
