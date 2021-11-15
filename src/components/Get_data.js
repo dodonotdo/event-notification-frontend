@@ -1,5 +1,4 @@
 import React from "react";
-
 class Get_data extends React.Component {
   // Constructor
   constructor(props) {
@@ -14,7 +13,7 @@ class Get_data extends React.Component {
         .then((res) => res.json())
         .then((json) => {
           this.setState({
-            sensors: json,
+            sensors: json.event_details,
           });
           console.log(this.state.sensors);
         });
