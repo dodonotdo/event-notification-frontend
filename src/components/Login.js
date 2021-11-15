@@ -4,21 +4,22 @@ import Button from "react-bootstrap/Button";
 import "./Login.css";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
 
-  function validateForm() {
-    return email.length > 0 && password.length > 0 && username.length > 0;
-  }
+  // function validateForm() {
+  //   return email.length > 0 && password.length > 0 && username.length > 0;
+  // }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  // }
 
   return (
     <div className="Login">
-      <Form onSubmit={handleSubmit}>
+      <button>Get Data</button>
+      {/* <Form onSubmit={handleSubmit}>
         <h1>Login Form</h1>
 
         <Form.Group>
@@ -52,7 +53,7 @@ export default function Login() {
         <Button className="btn" type="submit" onSubmit={validateForm()}>
           Login
         </Button>
-      </Form>
+      </Form> */}
     </div>
   );
 }
