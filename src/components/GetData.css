@@ -1,0 +1,27 @@
+.event_notification {
+  margin: 70px 130px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px 10px;
+}
+tr,td {text-align:left;}
+th {
+  text-align: center;
+  padding: 13px;
+  background-color: #04aa6d;
+}
+td {
+  text-align: center;
+  font-size: 14px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+}

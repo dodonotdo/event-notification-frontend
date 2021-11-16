@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./GetData.css";
 class GetData extends React.Component {
   constructor(props) {
     super(props);
@@ -29,17 +29,31 @@ class GetData extends React.Component {
         </div>
       );
     return (
-      <div className="App">
-        <h3> Fetch the data from an api in json format:- </h3>
-        {items.map((item) => (
+      <div className="event_notification">
+        {/* <h3> Fetch the data from an api in json format:- </h3> */}
+        <table>
+        <tbody>
+          <tr>
+            <th th colspan="4">Event Details</th>
+          </tr>
+          {items.map((item) => {
+            return (
+              <tr key={item.user_id}>
+                <td>{item.user_id}</td>
+                <td>{JSON.stringify(item.event_details)}</td>
+                <td>{item.createdAt}</td>
+                <td>{item.updatedAt}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+        </table>
+        {/* json format datas */}
+        {/* {items.map((item) => (
           <div key={item.user_id}>
-            <pre>
-              {
-                JSON.stringify(item, null, 2)
-              }
-            </pre>
+            <pre>{JSON.stringify(item, null, 2)}</pre>
           </div>
-        ))}
+        ))} */}
       </div>
     );
   }
