@@ -1,10 +1,11 @@
 import React from "react";
-class Get_data extends React.Component {
-  // Constructor
+
+class GetData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       items: [],
+      DataIsLoaded: false,
     };
   }
   componentWillMount() {
@@ -13,27 +14,35 @@ class Get_data extends React.Component {
         .then((res) => res.json())
         .then((json) => {
           this.setState({
-            sensors: json.event_details,
+            items: json,
+            DataIsLoaded: true,
           });
-          console.log(this.state.sensors);
         });
-    }, 4000);
+    }, 1000);
   }
-
   render() {
-    const { items } = this.state;
-    console.log(this.state);
- 
+    const { DataIsLoaded, items } = this.state;
+    if (!DataIsLoaded)
+      return (
+        <div>
+          <h2> Please wait some time.... </h2>
+        </div>
+      );
     return (
       <div className="App">
-        <h1> Fetch data from an api in react </h1>
-        {/* <button>get data</button> */}
+        <h3> Fetch the data from an api in json format:- </h3>
         {items.map((item) => (
-          <ol key={item.user_id}>event_details:{item.event_details}</ol>
+          <div key={item.user_id}>
+            <pre>
+              {
+                JSON.stringify(item, null, 2)
+              }
+            </pre>
+          </div>
         ))}
       </div>
     );
   }
 }
 
-export default Get_data;
+export default GetData;
